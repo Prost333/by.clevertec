@@ -15,19 +15,4 @@ import java.util.UUID;
 @FieldNameConstants
 public class Product {
 
-    private String id;
-
-    private String name;
-
-    private BigDecimal price;
-
-    public Product() {
-        this.id = UUID.randomUUID().toString();
-    }
-
-    public Product(String id, String name, BigDecimal price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-    }
 }

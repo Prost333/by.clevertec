@@ -17,11 +17,5 @@ import java.math.BigDecimal;
 @FieldNameConstants
 public class ProductDto {
 
-    private  String id;
-    @NotNull
 
-    private  String name;
-    @NotNull
-
-    private BigDecimal price;
 }

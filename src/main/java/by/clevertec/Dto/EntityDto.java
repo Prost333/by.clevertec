@@ -16,21 +16,4 @@ import javax.validation.constraints.Size;
 @ToString
 public class EntityDto {
 
-    private String id;
-
-    @NotNull
-
-    private String name;
-
-    @NotNull
-
-    private String surname;
-
-    @NotNull
-
-    private String login;
-
-    @NotNull
-
-    private String password;
 }

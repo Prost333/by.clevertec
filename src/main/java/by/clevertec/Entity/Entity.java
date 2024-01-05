@@ -19,25 +19,5 @@ import java.util.UUID;
 @FieldNameConstants
 public class Entity {
 
-    public String id;
 
-    @NotNull
-    public String name;
-
-    public String surname;
-
-    public String login;
-
-    public String password;
-    public Entity() {
-        this.id = UUID.randomUUID().toString();
-    }
-
-    public Entity(String id, String name, String surname, String login, String password) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.login = login;
-        this.password = password;
-    }
 }

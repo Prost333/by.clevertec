@@ -14,10 +14,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfiguration.class);
-        ProductService productService = applicationContext.getBean(ProductServiceImp.class);
-        List<ProductDto> products = productService.finaAll(0, null);
-        System.out.println(products);
 
     }
 }

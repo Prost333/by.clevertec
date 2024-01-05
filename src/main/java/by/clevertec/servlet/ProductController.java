@@ -26,25 +26,5 @@ import java.util.List;
 @WebServlet(name = "ProductController", urlPatterns = "/product")
 @NoArgsConstructor
 public class ProductController extends HttpServlet {
-    private ProductServiceImp productService;
-    public void init() {
-        ApplicationContext context =
-                new AnnotationConfigApplicationContext(AppConfiguration.class);
-        productService = context.getBean(ProductServiceImp.class);
-    }
 
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, jakarta.servlet.ServletException {
-        List<ProductDto> products = productService.finaAll(0, null);
-        System.out.println(products);
-        req.setAttribute("products", products);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/ProductServlet.jsp");
-        dispatcher.forward(req, resp);
-    }
-
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        resp.setContentType("text/html");
-        resp.getWriter().println("<h1>Приветствую!</h1>");
-    }
 }

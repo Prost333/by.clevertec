@@ -18,34 +18,5 @@ import java.io.IOException;
 @Component
 @WebServlet(name = "GreetingServlet", urlPatterns = "/pdf")
 public class GreetingServlet  extends HttpServlet {
-    private PDFPrint pdfPrint;
-    private ProductService productService;
-    public void init() {
-        ApplicationContext context =
-                new AnnotationConfigApplicationContext(AppConfiguration.class);
-        pdfPrint = context.getBean(PDFPrint.class);
-        productService = context.getBean(ProductServiceImp.class);
-    }
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        resp.setContentType("application/pdf");
-        resp.setHeader("Content-Disposition", "inline; filename=product.pdf");
-        try {
-            String productId = req.getParameter("productId");
-
-            ProductDto product = productService.getById(productId);
-
-            if (product == null) {
-                resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Product not found");
-                return;
-            }
-
-            pdfPrint.PrintProduct(product, resp.getOutputStream());
-            resp.getOutputStream().flush();
-        } catch (Exception e) {
-            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "An error occurred while creating the PDF");
-        }
-
-    }
 }

@@ -25,9 +25,9 @@ public class Entity {
     public String name;
 
     public String surname;
-
+    @NotNull
     public String login;
-
+    @NotNull
     public String password;
     public Entity() {
         this.id = UUID.randomUUID().toString();

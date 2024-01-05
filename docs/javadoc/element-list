@@ -1,0 +1,12 @@
+org.example
+org.example.Cache
+org.example.config
+org.example.db
+org.example.Dto
+org.example.Entity
+org.example.Mapping
+org.example.PDF
+org.example.Repository
+org.example.Repository.product
+org.example.Service
+org.example.servlet
